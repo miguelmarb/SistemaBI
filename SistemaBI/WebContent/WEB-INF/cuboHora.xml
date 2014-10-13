@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Schema name="cuboHora">
+  <Dimension type="StandardDimension" visible="true" name="Trabajador">
+    <Hierarchy name="Trabajador" visible="true" hasAll="true">
+      <Table name="tbl_trabajador" alias="">
+      </Table>
+      <Level name="nombre" visible="true" column="strNombre" type="String" uniqueMembers="false" levelType="Regular">
+      </Level>
+      <Level name="apellidopaterno" visible="true" column="strApePat" type="String" uniqueMembers="false" levelType="Regular">
+      </Level>
+      <Level name="apellidosmaterno" visible="true" column="strApeMat" type="String" uniqueMembers="false" levelType="Regular">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" name="Reserva">
+    <Hierarchy name="Reserva" visible="true" hasAll="true">
+      <Table name="tbl_tipo_reserva" alias="">
+      </Table>
+      <Level name="descripcionreserva" visible="true" column="strDescripcion" type="String" uniqueMembers="false" levelType="Regular">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="Cubo Hora 1" visible="true" cache="true" enabled="true">
+    <Table name="tbl_horario" alias="">
+    </Table>
+    <DimensionUsage source="Trabajador" name="Trabajador" visible="true" foreignKey="idTrabajador">
+    </DimensionUsage>
+    <DimensionUsage source="Reserva" name="Reserva" visible="true" foreignKey="idTipoReserva">
+    </DimensionUsage>
+    <Measure name="sumatrabajador" column="idTrabajador" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+</Schema>

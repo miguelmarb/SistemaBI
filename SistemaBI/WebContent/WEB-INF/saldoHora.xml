@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<report>
+
+  <header>
+    <generated>24/02/2014 06:16:24 p.m.</generated>
+    <server>PostgreSQL 9.2 (localhost:5432)</server>
+    <database>bdhora</database>
+    <schema>bdhora</schema>
+    <title>Tables list report</title>
+  </header>
+
+  <section id="s1" number="1" name="Tables">
+    <table>
+      <columns>
+        <column id="c1" number="1" name="Table" />
+        <column id="c2" number="2" name="Owner" />
+        <column id="c3" number="3" name="Comment" />
+      </columns>
+      <rows>
+        <row id="r1" number="1" c1="tbl_trabajador" c2="root" c3="" />
+        <row id="r2" number="2" c1="tbl_horario" c2="root" c3="" />
+        <row id="r3" number="3" c1="tbl_tipo_reserva" c2="root" c3="" />
+      </rows>
+    </table>
+  </section>
+
+</report>
+<!-- 
+<Schema name="saldo_detallado">
+
+  <Dimension type="StandardDimension" visible="true" name="New Dimension 0">
+
+    <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true" primaryKeyTable="tbl_trabajador">
+
+      <Level name="Actividad" visible="true" table="tbl_trabajador" column="strNombre"  uniqueMembers="false">
+
+      </Level>
+
+      <Level name="Clasificador" visible="true" table="tbl_trabajador" column="strApePat" uniqueMembers="false">
+
+      </Level>
+
+    </Hierarchy>
+
+  </Dimension>
+
+  <Dimension type="StandardDimension" visible="true" name="New Dimension 1">
+
+    <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true">
+
+      <Level name="Naturaleza" visible="true" table="tbl_trabajador" column="strNombre" nameColumn="strNombre" uniqueMembers="false" caption="strNombre" captionColumn="strNombre">
+
+      </Level>
+
+      <Level name="Periodo" visible="true" table="tbl_trabajador" column="strApeMat" nameColumn="strApeMat" uniqueMembers="false" caption="strApeMat" captionColumn="strApeMat">
+
+      </Level>
+
+    </Hierarchy>
+
+  </Dimension>
+
+  <Cube name="New Cube 0" visible="true" cache="true" enabled="true">
+
+    <Table name="tbl_trabajador" alias="SALDO DETALLADO">
+
+    </Table>
+
+    <DimensionUsage source="New Dimension 0" name="Dimension_Usa" visible="true">
+
+    </DimensionUsage>
+
+    <DimensionUsage source="New Dimension 1" name="Dimension_usa1" caption="Dimension_usa1" visible="true">
+
+    </DimensionUsage>
+
+    <Measure name="Acumulado_resta" column="idTrabajador" datatype="Numeric" aggregator="sum" caption="Acumulado_resta" visible="true">
+
+    </Measure>
+
+    <Measure name="Acumulado_suma" column="idTrabajador" datatype="Numeric" aggregator="sum" caption="Acumulado_suma" visible="true">
+
+    </Measure>
+
+  </Cube>
+
+</Schema>
+ -->

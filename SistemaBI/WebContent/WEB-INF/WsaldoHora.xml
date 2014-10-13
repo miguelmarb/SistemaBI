@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Schema name="saldo_detallado">
+
+  <Dimension type="StandardDimension" visible="true" name="New Dimension 0">
+
+    <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true" primaryKeyTable="PGB_SALDO_DETALLADO">
+
+      <Level name="Actividad" visible="true" table="PGB_SALDO_DETALLADO" column="ACTIVIDAD" nameColumn="ACTIVIDAD" uniqueMembers="false">
+
+      </Level>
+
+      <Level name="Clasificador" visible="true" table="PGB_SALDO_DETALLADO" column="CLASIFICADOR" uniqueMembers="false">
+
+      </Level>
+
+    </Hierarchy>
+
+  </Dimension>
+
+  <Dimension type="StandardDimension" visible="true" name="New Dimension 1">
+
+    <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true">
+
+      <Level name="Naturaleza" visible="true" table="PGB_SALDO_DETALLADO" column="NATURALEZA" nameColumn="NATURALEZA" uniqueMembers="false" caption="Naturaleza" captionColumn="NATURALEZA">
+
+      </Level>
+
+      <Level name="Periodo" visible="true" table="PGB_SALDO_DETALLADO" column="PERIODO" nameColumn="PERIODO" uniqueMembers="false" caption="Periodo" captionColumn="PERIODO">
+
+      </Level>
+
+    </Hierarchy>
+
+  </Dimension>
+
+  <Cube name="New Cube 0" visible="true" cache="true" enabled="true">
+
+    <Table name="PGB_SALDO_DETALLADO" schema="ICEBERGZK" alias="SALDO DETALLADO">
+
+    </Table>
+
+    <DimensionUsage source="New Dimension 0" name="Dimension_Usa" visible="true">
+
+    </DimensionUsage>
+
+    <DimensionUsage source="New Dimension 1" name="Dimension_usa1" caption="Dimension_usa1" visible="true">
+
+    </DimensionUsage>
+
+    <Measure name="Acumulado_resta" column="ACUMULADO_RESTA" datatype="Numeric" aggregator="sum" caption="Acumulado_resta" visible="true">
+
+    </Measure>
+
+    <Measure name="Acumulado_suma" column="ACUMULADO_SUMA" datatype="Numeric" aggregator="sum" caption="Acumulado_suma" visible="true">
+
+    </Measure>
+
+  </Cube>
+
+</Schema>
